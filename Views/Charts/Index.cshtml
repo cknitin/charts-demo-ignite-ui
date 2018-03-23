@@ -1,0 +1,90 @@
+﻿
+@model charts_demo_ignite_ui.Models.Chart
+
+<script>
+    function LoadSubCategoryCharts() {
+        var id = $('#ddlMainCategoryChart').val();
+
+        $.ajax({
+            type: "post",
+            url: "/Charts/GetSubCategoryCharts",
+            dataType: "html",
+            data: "CategoryChartId=" + id,
+            contentType: "application/x-www-form-urlencoded;charset=utf-8",
+            //  async: true,
+            success: function (data) {
+                var items = "";
+                items = "<option value=''>--select--</option>";
+                $.each(JSON.parse(data), function (i, item) {
+
+                    items += "<option value=\"" + item.Id + "\">" + item.Name + "</option>";
+                });
+                $('#ddlSubCategoryChart').html(items);
+            },
+            error: function (e) { display(e); }
+        });
+    }
+
+
+    function renderChart() {
+        var name = $("#ddlSubCategoryChart :selected").text();
+        $.ajax({
+            type: "post",
+            url: "/Charts/RenderChart",
+            dataType: "html",
+            data: "name=" + name,
+            contentType: "application/x-www-form-urlencoded;charset=utf-8",
+            beforeSend: function () {
+                $("#partialView").html("");
+                $('.loader').show()
+            },
+            complete: function () {
+                $('.loader').hide();
+            },
+            //  async: true,
+            success: function (result) { LoadPartialView(result); },
+            error: function (e) {
+                console.log(JSON.stringify(e));
+            }
+        });
+    }
+
+    function LoadPartialView(result) {
+
+        $("#partialView").html("");
+        $("#partialView").html(result);
+    }
+
+</script>
+
+@{
+    ViewBag.Title = "ignite UI Charts";
+}
+<br />
+<div class="form-group">
+    <label class="col-lg-2 control-label" for="business">Charts:</label>
+    <div class="col-lg-10">
+        @Html.DropDownListFor(model => model.Id, ViewData["CategoryCharts"] as List<SelectListItem>, "Select", new { onchange = "LoadSubCategoryCharts();", @id = "ddlMainCategoryChart", @class = "form-control input-xlarge required", @type = "text", @autocomplete = "off" })
+    </div>
+</div>
+<br />
+<br />
+<div class="form-group">
+    <label class="col-lg-2 control-label" for="business">Subcategory  Charts:</label>
+    <div class="col-lg-10">
+        @Html.DropDownListFor(model => model.Id, ViewData["SubCategoryCharts"] as List<SelectListItem>, "Select", new { onchange = "renderChart();", @id = "ddlSubCategoryChart", @class = "form-control input-xlarge required", @type = "text", @autocomplete = "off" })
+    </div>
+</div>
+<br />
+<br />
+<div class="form-group">
+
+    <div class="loader">
+        <center>
+            <img class="loading-image" src="~/ajax-loader.gif" alt="loading..">
+        </center>
+    </div>
+
+    <div id="partialView">
+    </div>
+</div>

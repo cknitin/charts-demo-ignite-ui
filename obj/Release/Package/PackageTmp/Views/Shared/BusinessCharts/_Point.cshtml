@@ -1,0 +1,48 @@
+﻿@model charts_demo_ignite_ui.Models.Chart
+<script type="text/javascript" src="https://www.igniteui.com/data-files/uk-france-population.js"></script>
+<script type="text/javascript">
+
+        $(function () {
+
+            var lastFiveYears = @Html.Raw(Model.Data);
+
+            $("#pointChart").igCategoryChart({
+                width: "98%",
+                height: "400px",
+                legend: { element: "pointLegend" },
+                title: "$$(Chart_title_countries_pop)",
+                subtitle: "$$(Chart_subtitle_countries_1995_v_2005)",
+                yAxisTitle: "$$(NumericAxis_title_population)",
+                dataSource: data,
+                chartType: "point",
+                isTransitionInEnabled: true,
+                transitionInDuration: 500
+            });
+        });
+</script>
+
+<style type="text/css">
+
+
+    .selectionOptions {
+        margin-bottom: 10px;
+    }
+
+    td {
+        vertical-align: top;
+    }
+
+    .chartElement {
+        padding-bottom: 20px;
+    }
+</style>
+<div style="display: table">
+
+    <div id="pointChart" class="chartElement" style="display: table-cell; width: auto; padding-right: 50px"></div>
+    <div id="pointLegend" style="width: 100px; display: table-cell;"></div>
+
+</div>
+<div class="Quandl-attribution">
+    $$(Chart_lbl_popDataFrom):
+    <a href="http://www.quandl.com/" target="_blank">Quandl</a>
+</div>

@@ -1,0 +1,35 @@
+﻿@model charts_demo_ignite_ui.Models.Chart
+<script type="text/javascript" src="https://www.igniteui.com/data-files/world-energy-production.js"></script>
+<script type="text/javascript">
+var lastFiveYears = @Html.Raw(Model.Data);
+    $(function () {
+        $("#columnChart").igCategoryChart({
+            width: "98%",
+            height: "350px",
+            dataSource: lastFiveYears,
+            chartType: "column",
+            legend: { element: "columnLegend" },
+            title: "$$(Chart_title_energy_production)",
+            subtitle: "$$(Chart_subtitle_energy_production)",
+            yAxisTitle: "$$(NumericAxis_title_energy_production)",
+            isTransitionInEnabled: true,
+            transitionInDuration: 500
+        });
+    });
+</script>
+<style type="text/css">
+    td {
+        vertical-align: top;
+    }
+    .chartElement {
+        padding-bottom: 20px;
+    }
+</style>
+<div style="display: table">
+    <div id="columnChart" class="chartElement" style="display: table-cell; width: auto; padding-right: 50px"></div>
+    <div id="columnLegend" style="width: 100px; display: table-cell;"></div>
+</div>
+<div class="EIA-attribution">
+    $$(Chart_lbl_energyDataFrom):<br />
+    <a href="http://www.eia.gov" target="_blank">U.S. Energy Information Administration (September 2012) </a>
+</div>

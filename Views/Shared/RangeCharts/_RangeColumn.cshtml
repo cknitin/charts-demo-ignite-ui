@@ -1,0 +1,79 @@
+﻿@model charts_demo_ignite_ui.Models.Chart
+<script type="text/javascript" src="https://www.igniteui.com/data-files/temperature.js"></script>
+
+<script id="tooltipTemplate" type="text/x-jquery-tmpl">
+    <div>
+        <span id="tooltipValue">Philadelphia: ${item.PhiladelphiaTemp}</span><br />
+        <span id="Span1">New York City: ${item.NewYorkCityTemp}</span>
+    </div>
+</script>
+
+<script type="text/javascript">
+     var data = @Html.Raw(Model.Data);
+
+
+    $(function () {
+        function createChart(selector, seriesType, dataSource) {
+            $(selector).igDataChart({
+                width: "400px",
+                height: "400px",
+                dataSource: data,
+                title: "New York City vs. Philadelphia",
+                subtitle: "A comparison of daily temperatures",
+                axes: [{
+                    name: "xAxis",
+                    type: "categoryX",
+                    label: "Time"
+                },
+                {
+                    name: "yAxis",
+                    type: "numericY",
+                    title: "Temperature (Degrees Fahrenheit)",
+                }],
+                series: [{
+                    name: "series1",
+                    title: "Test Series",
+                    type: seriesType,
+                    isHighlightingEnabled: true,
+                    isTransitionInEnabled: true,
+                    xAxis: "xAxis",
+                    yAxis: "yAxis",
+                    lowMemberPath: "NewYorkCityTemp",
+                    highMemberPath: "PhiladelphiaTemp",
+                    showTooltip: true,
+                    tooltipTemplate: "tooltipTemplate"
+                }],
+                horizontalZoomable: true,
+                verticalZoomable: true,
+                windowResponse: "immediate"
+            });
+        }
+
+        createChart("#chartRangeColumn", "rangeColumn", data);
+    });
+</script>
+
+<style type="text/css">
+    h2 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .chart {
+        position: relative;
+        float: left;
+        margin-right: 10px;
+    }
+</style>
+
+<div class="chartContainer">
+    <div class="chart">
+        <h2>Range Column</h2>
+        <div id="chartRangeColumn"></div>
+    </div>
+</div>
+
+<div class="NOAAdata-attribution">
+    Weather data from:<br />
+    <a href="http://www.noaa.gov/" target="_blank">NOAA</a>
+</div>

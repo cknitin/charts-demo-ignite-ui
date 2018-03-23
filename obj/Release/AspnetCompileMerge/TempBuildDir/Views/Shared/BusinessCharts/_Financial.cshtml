@@ -1,0 +1,211 @@
+﻿<script type="text/javascript" src="https://www.igniteui.com/data-files/financial-data.js"></script>
+<script type="text/javascript">
+    var dataAdobe = [
+        { "Index": 1, "Date": "7/18/2013", "Open": 48.04, "High": 48.52, "Low": 48, "Close": 48.19, "Volume": 2641582 },
+        { "Index": 2, "Date": "7/17/2013", "Open": 48.17, "High": 48.4, "Low": 47.78, "Close": 48.04, "Volume": 3135777 },
+        { "Index": 3, "Date": "7/16/2013", "Open": 48.05, "High": 48.13, "Low": 47.36, "Close": 47.48, "Volume": 2473018 },
+        { "Index": 4, "Date": "7/15/2013", "Open": 48.25, "High": 48.46, "Low": 48.1, "Close": 48.12, "Volume": 2122706 },
+        { "Index": 5, "Date": "7/12/2013", "Open": 48.35, "High": 48.63, "Low": 48.08, "Close": 48.39, "Volume": 4135697 },
+        { "Index": 6, "Date": "7/11/2013", "Open": 47.62, "High": 48, "Low": 47.5, "Close": 47.99, "Volume": 3293492 },
+        { "Index": 7, "Date": "7/10/2013", "Open": 47.09, "High": 47.33, "Low": 46.64, "Close": 47.25, "Volume": 2683537 },
+        { "Index": 8, "Date": "7/9/2013", "Open": 46.76, "High": 47.31, "Low": 46.73, "Close": 47.26, "Volume": 2578815 },
+        { "Index": 9, "Date": "7/8/2013", "Open": 47.03, "High": 47.49, "Low": 46.44, "Close": 46.62, "Volume": 2813076 },
+        { "Index": 10, "Date": "7/5/2013", "Open": 46.69, "High": 47.1, "Low": 46.55, "Close": 47, "Volume": 1614563 },
+        { "Index": 11, "Date": "7/3/2013", "Open": 45.71, "High": 46.82, "Low": 45.66, "Close": 46.42, "Volume": 1601483 },
+        { "Index": 12, "Date": "7/2/2013", "Open": 46, "High": 46.48, "Low": 45.72, "Close": 46.03, "Volume": 3025049 },
+        { "Index": 13, "Date": "7/1/2013", "Open": 45.23, "High": 47.19, "Low": 44.88, "Close": 46.24, "Volume": 6341593 },
+        { "Index": 14, "Date": "6/28/2013", "Open": 45.99, "High": 45.99, "Low": 45.39, "Close": 45.56, "Volume": 4052512 },
+        { "Index": 15, "Date": "6/27/2013", "Open": 45.9, "High": 46.26, "Low": 45.59, "Close": 45.93, "Volume": 2916446 },
+        { "Index": 16, "Date": "6/26/2013", "Open": 44.95, "High": 45.92, "Low": 44.9, "Close": 45.68, "Volume": 5356322 },
+        { "Index": 17, "Date": "6/25/2013", "Open": 44.04, "High": 44.44, "Low": 43.46, "Close": 44.37, "Volume": 3368384 },
+        { "Index": 18, "Date": "6/24/2013", "Open": 44.34, "High": 44.6, "Low": 43.37, "Close": 43.6, "Volume": 4492827 },
+        { "Index": 19, "Date": "6/21/2013", "Open": 44.92, "High": 45, "Low": 44.23, "Close": 44.77, "Volume": 6294691 },
+        { "Index": 20, "Date": "6/20/2013", "Open": 45.28, "High": 45.29, "Low": 44.45, "Close": 44.9, "Volume": 5488904 }
+    ];
+    var data = [
+        { "Index": 1, "Date": "7/18/2013", "Open": 35.72, "High": 35.89, "Low": 35.22, "Close": 35.44, "Volume": 49547075 },
+        { "Index": 2, "Date": "7/17/2013", "Open": 36.34, "High": 36.39, "Low": 35.49, "Close": 35.74, "Volume": 37289320 },
+        { "Index": 3, "Date": "7/16/2013", "Open": 36.01, "High": 36.43, "Low": 35.96, "Close": 36.27, "Volume": 36378681 },
+        { "Index": 4, "Date": "7/15/2013", "Open": 35.66, "High": 36.22, "Low": 35.58, "Close": 36.17, "Volume": 34145645 },
+        { "Index": 5, "Date": "7/12/2013", "Open": 35.58, "High": 35.73, "Low": 35.28, "Close": 35.67, "Volume": 35502638 },
+        { "Index": 6, "Date": "7/11/2013", "Open": 35, "High": 35.77, "Low": 34.9, "Close": 35.68, "Volume": 53638234 },
+        { "Index": 7, "Date": "7/10/2013", "Open": 34.34, "High": 34.81, "Low": 34.32, "Close": 34.7, "Volume": 29658734 },
+        { "Index": 8, "Date": "7/9/2013", "Open": 34.58, "High": 34.6, "Low": 34.14, "Close": 34.35, "Volume": 25320908 },
+        { "Index": 9, "Date": "7/8/2013", "Open": 34.35, "High": 34.59, "Low": 33.98, "Close": 34.32, "Volume": 32398742 },
+        { "Index": 10, "Date": "7/5/2013", "Open": 34.09, "High": 34.24, "Low": 33.58, "Close": 34.21, "Volume": 26085981 },
+        { "Index": 11, "Date": "7/3/2013", "Open": 33.66, "High": 34.37, "Low": 33.6, "Close": 34.01, "Volume": 15994380 },
+        { "Index": 12, "Date": "7/2/2013", "Open": 34.41, "High": 34.44, "Low": 33.63, "Close": 33.94, "Volume": 37634572 },
+        { "Index": 13, "Date": "7/1/2013", "Open": 34.75, "High": 34.99, "Low": 34.33, "Close": 34.36, "Volume": 31064000 },
+        { "Index": 14, "Date": "6/28/2013", "Open": 34.38, "High": 34.79, "Low": 34.34, "Close": 34.54, "Volume": 65548196 },
+        { "Index": 15, "Date": "6/27/2013", "Open": 34.52, "High": 34.78, "Low": 34.5, "Close": 34.62, "Volume": 28993542 },
+        { "Index": 16, "Date": "6/26/2013", "Open": 34.12, "High": 34.48, "Low": 33.89, "Close": 34.35, "Volume": 48667834 },
+        { "Index": 17, "Date": "6/25/2013", "Open": 34.08, "High": 34.38, "Low": 33.46, "Close": 33.67, "Volume": 44073348 },
+        { "Index": 18, "Date": "6/24/2013", "Open": 32.94, "High": 34.2, "Low": 32.57, "Close": 33.72, "Volume": 56113708 },
+        { "Index": 19, "Date": "6/21/2013", "Open": 33.66, "High": 33.73, "Low": 33.05, "Close": 33.26, "Volume": 85338395 },
+        { "Index": 20, "Date": "6/20/2013", "Open": 34.26, "High": 34.33, "Low": 33.37, "Close": 33.49, "Volume": 54496758 }
+    ];
+    $(function () {
+        $("#candlestickChart").igDataChart({
+            width: "100%",
+            height: "500px",
+            title: "Microsoft (MSFT) vs. Adobe (ADBE)",
+            subtitle: "A comparison of stocks over time",
+            horizontalZoomable: true,
+            verticalZoomable: true,
+            windowResponse: "immediate",
+            axes: [{
+                name: "xAxis",
+                type: "categoryX",
+                dataSource: data,
+                label: "Date",
+                title: "Date",
+                interval: 10
+            }, {
+                name: "yAxis",
+                type: "numericY",
+                title: "Price",
+            }],
+            series: [{
+                name: "series1",
+                dataSource: data,
+                title: "Price Series",
+                type: "financial",
+                displayType: "candlestick",
+                isTransitionInEnabled: true,
+                isHighlightingEnabled: true,
+                xAxis: "xAxis",
+                yAxis: "yAxis",
+                openMemberPath: "Open",
+                highMemberPath: "High",
+                lowMemberPath: "Low",
+                closeMemberPath: "Close",
+                showTooltip: true,
+                thickness: 1,
+                trendLineBrush: "rgba(68, 172, 214, .8)",
+                trendLineThickness: 5,
+                trendLineType: "exponentialAverage",
+                negativeBrush: "rgba(198, 45, 54, .8)"
+            }, {
+                name: "series2",
+                dataSource: dataAdobe,
+                title: "Price Series",
+                type: "financial",
+                isTransitionInEnabled: true,
+                isHighlightingEnabled: true,
+                displayType: "candlestick",
+                xAxis: "xAxis",
+                yAxis: "yAxis",
+                openMemberPath: "Open",
+                highMemberPath: "High",
+                lowMemberPath: "Low",
+                closeMemberPath: "Close",
+                showTooltip: true,
+                thickness: 1,
+                trendLineBrush: "rgba(73, 73, 73, .8)",
+                trendLineThickness: 5,
+                trendLineType: "exponentialAverage",
+                negativeBrush: "rgba(198, 45, 54, .8)"
+            }],
+        });
+
+        $("#ohlcChart").igDataChart({
+            width: "100%",
+            height: "500px",
+            title: "Microsoft (MSFT) vs. Adobe (ADBE)",
+            subtitle: "A comparison of stocks over time",
+            axes: [{
+                name: "xAxis",
+                type: "categoryX",
+                dataSource: data,
+                label: "Date",
+                interval: 10,
+                title: "Date",
+            }, {
+                name: "yAxis",
+                type: "numericY",
+                title: "Price",
+            }],
+            series: [{
+                name: "series1",
+                dataSource: data,
+                title: "Price Series",
+                type: "financial",
+                isTransitionInEnabled: true,
+                displayType: "ohlc",
+                xAxis: "xAxis",
+                yAxis: "yAxis",
+                openMemberPath: "Open",
+                highMemberPath: "High",
+                lowMemberPath: "Low",
+                closeMemberPath: "Close",
+                showTooltip: true,
+                thickness: 2,
+                trendLineBrush: "rgba(68, 172, 214, .8)",
+                trendLineThickness: 5,
+                trendLineType: "exponentialAverage",
+                negativeBrush: "rgba(198, 45, 54, .8)"
+            }, {
+                name: "series2",
+                dataSource: dataAdobe,
+                title: "Price Series",
+                type: "financial",
+                isTransitionInEnabled: true,
+                displayType: "ohlc",
+                xAxis: "xAxis",
+                yAxis: "yAxis",
+                openMemberPath: "Open",
+                highMemberPath: "High",
+                lowMemberPath: "Low",
+                closeMemberPath: "Close",
+                showTooltip: true,
+                thickness: 2,
+                trendLineBrush: "rgba(73, 73, 73, .8)",
+                trendLineThickness: 5,
+                trendLineType: "exponentialAverage",
+                negativeBrush: "rgba(198, 45, 54, .8)"
+            }],
+            horizontalZoomable: true,
+            verticalZoomable: true,
+            windowResponse: "immediate"
+        });
+    });
+</script>
+
+<style type="text/css">
+    td {
+        vertical-align: top;
+    }
+
+    .chartElement {
+        margin-right: 10px;
+    }
+
+    .chart-container {
+        width: 49%;
+        box-sizing: border-box;
+        float: left;
+    }
+
+        .chart-container h3 {
+            text-align: center
+        }
+
+    #charts {
+        padding: 1px;
+    }
+</style>
+
+<div id="charts">
+    <div class="chart-container">
+        <h3>Candlestick</h3>
+        <div id="candlestickChart" class="chartElement"></div>
+    </div>
+    <div class="chart-container">
+        <h3>OHLC</h3>
+        <div id="ohlcChart" class="chartElement"></div>
+        <table>
+            <tr><td><div class="Quandldata-attribution">Stock data from: <a href="http://www.quandl.com/" target="_blank">Quandl</a></div></td></tr>
+        </table>
+
+</div>
+</div>

@@ -1,0 +1,140 @@
+﻿
+@model charts_demo_ignite_ui.Models.Chart
+
+@{
+
+    switch (@Model.Name)
+    {
+        case "Bar":
+            @Html.Partial("~/Views/shared/BusinessCharts/_Bar.cshtml", Model)
+            break;
+        case "Bubble":
+            @Html.Partial("~/Views/shared/BusinessCharts/_Bubble.cshtml")
+            break;
+        case "Column":
+            @Html.Partial("~/Views/shared/BusinessCharts/_Column.cshtml", Model)
+            break;
+        case "Doughnut":
+            @Html.Partial("~/Views/shared/BusinessCharts/_Doughnut.cshtml", Model)
+            break;
+        case "Financial":
+            @Html.Partial("~/Views/shared/BusinessCharts/_Financial.cshtml")
+            break;
+        case "Funnel":
+            @Html.Partial("~/Views/shared/BusinessCharts/_Funnel.cshtml")
+            break;
+        case "Line":
+            @Html.Partial("~/Views/shared/BusinessCharts/_Line.cshtml", Model)
+            break;
+        case "Pie":
+            @Html.Partial("~/Views/shared/BusinessCharts/_Pie.cshtml", Model)
+            break;
+        case "Point":
+            @Html.Partial("~/Views/shared/BusinessCharts/_Point.cshtml", Model)
+            break;
+        case "Scatter":
+            @Html.Partial("~/Views/shared/BusinessCharts/_Scatter.cshtml")
+            break;
+        case "Sparkline":
+            @Html.Partial("~/Views/shared/BusinessCharts/_Sparkline.cshtml")
+            break;
+        case "Polar Area":
+            @Html.Partial("~/Views/shared/PolarCharts/_PolarArea.cshtml", Model)
+            break;
+        case "Polar Line":
+            @Html.Partial("~/Views/shared/PolarCharts/_PolarLine.cshtml", Model)
+            break;
+        case "Polar Point":
+            @Html.Partial("~/Views/shared/PolarCharts/_PolarPoint.cshtml", Model)
+            break;
+        case "Polar Spline":
+            @Html.Partial("~/Views/shared/PolarCharts/_PolarSpline.cshtml", Model)
+            break;
+        case "Polar Spline Area":
+            @Html.Partial("~/Views/shared/PolarCharts/_PolarSplineArea.cshtml", Model)
+            break;
+        case "Radial Area":
+            @Html.Partial("~/Views/shared/RadialCharts/_RadialArea.cshtml", Model)
+            break;
+        case "Radial Column":
+            @Html.Partial("~/Views/shared/RadialCharts/_RadialColumn.cshtml", Model)
+            break;
+        case "Radial Line":
+            @Html.Partial("~/Views/shared/RadialCharts/_RadialLine.cshtml", Model)
+            break;
+        case "Radial Pie":
+            @Html.Partial("~/Views/shared/RadialCharts/_RadialPie.cshtml", Model)
+            break;
+        case "Range Area":
+            @Html.Partial("~/Views/shared/RangeCharts/_RangeArea.cshtml", Model)
+            break;
+        case "Range Column":
+            @Html.Partial("~/Views/shared/RangeCharts/_RangeColumn.cshtml", Model)
+            break;
+        case "Spline":
+            @Html.Partial("~/Views/shared/SplineCharts/_Spline.cshtml", Model)
+            break;
+        case "Spline Area":
+            @Html.Partial("~/Views/shared/SplineCharts/_SplineArea.cshtml", Model)
+            break;
+        case "Stacked Area":
+            @Html.Partial("~/Views/shared/StackedCharts/_StackedArea.cshtml", Model)
+            break;
+        case "Stacked Bar":
+            @Html.Partial("~/Views/shared/StackedCharts/_StackedBar.cshtml", Model)
+            break;
+        case "Stacked Column":
+            @Html.Partial("~/Views/shared/StackedCharts/_StackedColumn.cshtml", Model)
+            break;
+        case "Stacked Line":
+            @Html.Partial("~/Views/shared/StackedCharts/_StackedLine.cshtml", Model)
+            break;
+        case "Stacked Spline":
+            @Html.Partial("~/Views/shared/StackedCharts/_StackedSpline.cshtml", Model)
+            break;
+        case "Stacked Spline Area":
+            @Html.Partial("~/Views/shared/StackedCharts/_StackedSplineArea.cshtml", Model)
+            break;
+        case "100% Stacked Area":
+            @Html.Partial("~/Views/shared/StackedCharts/_100StackedArea.cshtml", Model)
+            break;
+        case "100% Stacked Bar":
+            @Html.Partial("~/Views/shared/StackedCharts/_100StackedBar.cshtml", Model)
+            break;
+        case "100% Stacked Column":
+            @Html.Partial("~/Views/shared/StackedCharts/_100StackedColumn.cshtml", Model)
+            break;
+        case "100% Stacked Line":
+            @Html.Partial("~/Views/shared/StackedCharts/_100StackedLine.cshtml", Model)
+            break;
+        case "100% Stacked Spline":
+            @Html.Partial("~/Views/shared/StackedCharts/_100StackedSpline.cshtml", Model)
+            break;
+        case "100% Stacked Spline Area":
+            @Html.Partial("~/Views/shared/StackedCharts/_100StackedSplineArea.cshtml", Model)
+            break;
+        case "Step Area":
+            @Html.Partial("~/Views/shared/StepCharts/_StepArea.cshtml",Model)
+            break;
+        case "Step Line":
+            @Html.Partial("~/Views/shared/StepCharts/_StepLine.cshtml", Model)
+            break;
+        case "Waterfall":
+            @Html.Partial("~/Views/shared/StepCharts/_Waterfall.cshtml", Model)
+            break;
+        case "Binding Break Event Data":
+            @Html.Partial("~/Views/shared/ShapeCharts/_BindingBreakEvenData.cshtml")
+            break;
+        case "Polygon":
+            @Html.Partial("~/Views/shared/ShapeCharts/_Polygon.cshtml")
+            break;
+        case "Polyline":
+            @Html.Partial("~/Views/shared/ShapeCharts/_Polyline.cshtml")
+            break;
+        default:
+            break;
+    }
+
+}
+
+

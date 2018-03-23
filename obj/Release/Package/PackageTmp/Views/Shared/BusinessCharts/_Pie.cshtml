@@ -1,0 +1,29 @@
+﻿@model charts_demo_ignite_ui.Models.Chart
+<style type="text/css">
+    #chart {
+        position: relative;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+</style>
+
+<div id="chart"></div>
+
+<script>
+
+    $(function () {
+
+        var data = @Html.Raw(Model.Data)
+
+        $("#chart").igPieChart({
+            width: "435px",
+            height: "435px",
+            dataSource: data, //JSON data defined above
+            dataValue: "Pop2005",
+            dataLabel: "CountryName",
+            labelsPosition: "bestFit"
+        });
+
+    });
+</script>

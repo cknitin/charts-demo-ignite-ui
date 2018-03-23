@@ -1,0 +1,70 @@
+﻿@model charts_demo_ignite_ui.Models.Chart
+<script type="text/javascript" src="https://www.igniteui.com/data-files/world-energy-production.js"></script>
+<script type="text/javascript">
+    var lastFiveYears = @Html.Raw(Model.Data);
+    $(document).ready(function () {
+        $("#barChart").igDataChart({
+            width: "98%",
+            height: "550px",
+            dataSource: lastFiveYears,
+            title: "Energy Production Per Country",
+            subtitle: "3 years Total Primary Energy producers",
+            legend: { element: "barLegend" },
+            axes: [{
+                name: "xAxis",
+                type: "numericX",
+                title: "Quadrillion Btu"
+            }, {
+                name: "yAxis",
+                type: "categoryY",
+                label: "Year"
+            }],
+            series: [
+             {
+                name: "series1",
+                title: "Russia",
+                type: "bar",
+                isHighlightingEnabled: true,
+                isTransitionInEnabled: true,
+                xAxis: "xAxis",
+                yAxis: "yAxis",
+                valueMemberPath: "Russia"
+            }, {
+                name: "series2",
+                title: "United States",
+                type: "bar",
+                isHighlightingEnabled: true,
+                isTransitionInEnabled: true,
+                xAxis: "xAxis",
+                yAxis: "yAxis",
+                valueMemberPath: "UnitedStates"
+            }, {
+                name: "series3",
+                title: "China",
+                type: "bar",
+                isHighlightingEnabled: true,
+                isTransitionInEnabled: true,
+                xAxis: "xAxis",
+                yAxis: "yAxis",
+                valueMemberPath: "China"
+            }]
+        });
+    });
+</script>
+<style type="text/css">
+    td {
+        vertical-align: top;
+    }
+
+    .chartElement {
+        padding-bottom: 20px;
+    }
+</style>
+ Bar Chart
+<table>
+    <tr>
+        <td id="barChart" class="chartElement"></td>
+        <td id="barLegend" style="float: left"></td>
+    </tr>
+</table>
+

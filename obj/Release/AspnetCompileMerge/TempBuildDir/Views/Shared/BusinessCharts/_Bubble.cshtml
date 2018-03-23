@@ -1,0 +1,78 @@
+﻿<script type="text/javascript" src="https://www.igniteui.com/data-files/us-fao-gross-production.js"></script>
+<div class="chartContainer">
+    <div class="chart">
+        <h4>Bubble Chart</h4>
+        <div id="chartBubble"></div>
+    </div>
+</div>
+<div class="UNdata-attribution">
+    Agricultural data from:<br />
+    <a href="http://data.un.org/" target="_blank">UNdata</a>
+</div>
+<script type="text/javascript">
+    var agriculturalData = [
+        { "Country": "United States of America", "Element": "Gross Production 1999-2001 (1000 I$)", "Year": 2007, "Value_Unit": "1,000,000 Int. $", "Value": 184698, "Population_Unit": "1,000,000 People", "Population": 302 },
+        { "Country": "United States of America", "Element": "Gross Production 1999-2001 (1000 I$)", "Year": 2006, "Value_Unit": "1,000,000 Int. $", "Value": 176803, "Population_Unit": "1,000,000 People", "Population": 299 },
+        { "Country": "United States of America", "Element": "Gross Production 1999-2001 (1000 I$)", "Year": 2005, "Value_Unit": "1,000,000 Int. $", "Value": 181432, "Population_Unit": "1,000,000 People", "Population": 296 },
+        { "Country": "United States of America", "Element": "Gross Production 1999-2001 (1000 I$)", "Year": 2004, "Value_Unit": "1,000,000 Int. $", "Value": 183519, "Population_Unit": "1,000,000 People", "Population": 294 },
+        { "Country": "United States of America", "Element": "Gross Production 1999-2001 (1000 I$)", "Year": 2003, "Value_Unit": "1,000,000 Int. $", "Value": 172458, "Population_Unit": "1,000,000 People", "Population": 291 },
+        { "Country": "United States of America", "Element": "Gross Production 1999-2001 (1000 I$)", "Year": 2002, "Value_Unit": "1,000,000 Int. $", "Value": 167494, "Population_Unit": "1,000,000 People", "Population": 288 },
+        { "Country": "United States of America", "Element": "Gross Production 1999-2001 (1000 I$)", "Year": 2001, "Value_Unit": "1,000,000 Int. $", "Value": 170755, "Population_Unit": "1,000,000 People", "Population": 285 },
+        { "Country": "United States of America", "Element": "Gross Production 1999-2001 (1000 I$)", "Year": 2000, "Value_Unit": "1,000,000 Int. $", "Value": 173640, "Population_Unit": "1,000,000 People", "Population": 282 }
+    ];
+        $(function () {
+            function createBubbleChart(selector, dataSource) {
+                $(selector).igDataChart({
+                    width: "400px",
+                    height: "400px",
+                    dataSource: dataSource,
+                    title: "U.S. Agricultural Production Per Year",
+                    subtitle: "Data from 2000-2007",
+                    axes: [{
+                        name: "xAxis",
+                        type: "numericX",
+                        interval: 10,
+                        title: "Year",
+                    }, {
+                        name: "yAxis",
+                        type: "numericY",
+                        title: "Billions of USD",
+                        maximumValue: 200000,
+                        formatLabel: function (val) {
+                            var bVal = (val / 1000),
+                            rounded = Math.round(bVal * 100) / 100;
+                            return "$" + rounded;
+                        }
+                    }],
+                    series: [{
+                        name: "bubble",
+                        type: "bubble",
+                        xAxis: "xAxis",
+                        yAxis: "yAxis",
+                        xMemberPath: "Year",
+                        yMemberPath: "Value",
+                        radiusMemberPath: "Population",
+                        fillMemberPath: "Population",
+                        labelMemberPath: "Population",
+                        markerType: "circle",
+                        radiusScale: {
+                            minimumValue: 2,
+                            maximumValue: 12,
+                            isLogarithmic: true
+                        },
+                        fillScale: {
+                            type: "value",
+                            brushes: ["red", "orange", "yellow"],
+                            minimumValue: 150,
+                            maximumValue: 400
+                        }
+                    }],
+                    horizontalZoomable: true,
+                    verticalZoomable: true,
+                    windowResponse: "immediate"
+                });
+            }
+            var dataSource = agriculturalData;
+            createBubbleChart("#chartBubble", dataSource);
+        });
+</script>
